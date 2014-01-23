@@ -58,4 +58,4 @@ byline should link to this page.
 
 * [DBC Shortener with users challenge][shortener with users]
 
-[shortener with users]: http://socrates.devbootcamp.com/challenges/278
+[shortener with users]: https://github.com/Devbootcamp/sinatra-url-shortener-with-users-challenge

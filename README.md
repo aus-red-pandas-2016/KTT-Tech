@@ -1,23 +1,26 @@
-# Blog 2 Multi Author 
- 
-##Learning Competencies 
+# Blog 2 Multi Author
 
-##Summary 
+## Learning Competencies
 
- Re-using what code you can from the [URL Shortener with users](http://socrates.devbootcamp.com/challenges/278), now add user authentication to your blog engine.
+* Revisit authentication and authorization for web applications.
+* ActiveRecord associations.
 
-The authorization rule for now is that any authenticated user has permission to create a post, but *only their posts*.  In other words, anyone can sign up and create a post, but I'm the only person who has permission to update or destroy posts I've created.
+## Summary
 
-## Learning Goals
+Re-using what code you can from the [URL Shortener with users][shortener with
+users], now add user authentication to your blog engine.
 
-- Revisit authentication and authorization for web applications.
-- ActiveRecord associations.
+The authorization rule for now is that any authenticated user has permission to
+create a post, but *only their posts*.  In other words, anyone can sign up and
+create a post, but I'm the only person who has permission to update or destroy
+posts I've created.
 
-## Objectives
+## Releases
 
-### Integrate User Signup
+### Release 0: Integrate User Signup
 
-Create the appropriate controllers for user authentication.  You'll want routes that correspond to:
+Create the appropriate controllers for user authentication.  You'll want routes
+that correspond to:
 
 1. A user being prompted to log in
 2. A user submitting their email + password
@@ -27,7 +30,7 @@ Create the appropriate controllers for user authentication.  You'll want routes 
 
 The ability to create a `Post` is restricted to users who have signed up.  For now anyone can see any `Post`.
 
-### Authorization
+### Release 1: Authorization
 
 The application has the following authorization rules:
 
@@ -37,9 +40,10 @@ The application has the following authorization rules:
 
 If a user tries to do any of the above and isn't permitted, redirect them away from the page to somewhere sensible, e.g., the homepage.
 
-### Add New Information to Views
+### Release 3: Add New Information to Views
 
-Now that posts have authors, display author-related information on the post, e.g., a byline.
+Now that posts have authors, display author-related information on the post,
+e.g., a byline.
 
 Also add a route so that when someone visits
 
@@ -47,11 +51,11 @@ Also add a route so that when someone visits
 /users/123/posts
 ```
 
-we see a list of all posts created by user #123.  The author's name in the byline should link to this page. 
+we see a list of all posts created by user #123.  The author's name in the
+byline should link to this page.
 
-##Releases
-###Release 0 
+## Resources
 
-##Optimize Your Learning 
+* [DBC Shortener with users challenge][shortener with users]
 
-##Resources
+[shortener with users]: https://github.com/Devbootcamp/sinatra-url-shortener-with-users-challenge

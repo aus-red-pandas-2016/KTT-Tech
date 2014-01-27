@@ -2,8 +2,9 @@
 
 ## Learning Competencies
 
-* Revisit authentication and authorization for web applications.
-* ActiveRecord associations.
+* Implement secure authentication in a web application
+* Implement a user authorization scheme to limit unauthorized access to specific pages in a web application  
+* Use Active Record Associations.
 
 ## Summary
 
@@ -14,6 +15,8 @@ The authorization rule for now is that any authenticated user has permission to
 create a post, but *only their posts*.  In other words, anyone can sign up and
 create a post, but I'm the only person who has permission to update or destroy
 posts I've created.
+
+Start by copying your [Blog 1](https://github.com/sea-lions-2014/blog-1-anonymous-blog-challenge) directory into the source directory for this challenge and build off of it. 
 
 ## Releases
 

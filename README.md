@@ -8,15 +8,14 @@
 
 ## Summary
 
-Re-using what code you can from the [URL Shortener with users][shortener with
-users], now add user authentication to your blog engine.
+Re-using what code you can from the [URL Shortener with users](../../../sinatra-url-shortener-with-users-challenge), now add user authentication to your blog engine.
 
 The authorization rule for now is that any authenticated user has permission to
 create a post, but *only their posts*.  In other words, anyone can sign up and
 create a post, but I'm the only person who has permission to update or destroy
 posts I've created.
 
-Start by copying your [Blog 1](https://github.com/sea-lions-2014/blog-1-anonymous-blog-challenge) directory into the source directory for this challenge and build off of it. 
+Start by copying your [Blog 1](../../../blog-1-anonymous-blog-challenge) directory into the source directory for this challenge and build off of it. 
 
 ## Releases
 
@@ -59,6 +58,6 @@ byline should link to this page.
 
 ## Resources
 
-* [DBC Shortener with users challenge][shortener with users]
+* [DBC Shortener with users challenge](../../../sinatra-url-shortener-with-users-challenge)
 
-[shortener with users]: https://github.com/Devbootcamp/sinatra-url-shortener-with-users-challenge
+[shortener-with-users]: ../../../sinatra-url-shortener-with-users-challenge

@@ -50,4 +50,24 @@ describe Entry do
       end
     end
   end
+
+  describe 'stubbing post body' do
+    context 'if body has more than twentyfive words' do
+      it 'cuts body to first twenty-five words' do
+        entry = Entry.create(title: "Title Words", body: "One two three. \"Four five six\" seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen. Seventeen eighteen! Nineteen twenty twentyone twentytwo twentythree twentyfour twentyfive twentysix twentyseven twentyeight twentynine thirty.")
+        body_stub = entry.stubbed_body
+
+        expect(body_stub).to eq "One two three. \"Four five six\" seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen. Seventeen eighteen! Nineteen twenty twentyone twentytwo twentythree twentyfour twentyfive ..."
+      end
+    end
+
+    context 'if body has twentyfive or less words' do
+      it 'returns the whole body' do
+        entry = Entry.create(title: "Title Words", body: "One two three. \"Four five six\" seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen. Seventeen eighteen! Nineteen twenty twentyone twentytwo twentythree twentyfour twentyfive.")
+        body_stub = entry.stubbed_body
+
+        expect(body_stub).to eq entry.body
+      end
+    end
+  end
 end

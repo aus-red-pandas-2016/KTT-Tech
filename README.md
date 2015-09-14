@@ -1,21 +1,11 @@
-# Blog 2 Multi Author
-
-## Learning Competencies
-
-* Implement secure authentication in a web application
-* Implement a user authorization scheme to limit unauthorized access to specific pages in a web application  
-* Use Active Record Associations.
+# Blog 2: Authentication and Authorization
 
 ## Summary
+In this challenge, we're going to add a feature to the blog application that we built in the [*blog-1-anonymous-blog-challenge*][blog-1-challenge].  In that challenge, anyone could visit our site and write a blog entry.  We're now going to restrict writing entries to registered users.
 
-Re-using what code you can from the [URL Shortener with users](../../../sinatra-url-shortener-with-users-challenge), now add user authentication to your blog engine.
+### Authentication and Authorization
+The focus of this challenge is on who has permission to do what in our application.  Think about sites like Facebook and Twitter.  We need to register with each site before we can post status updates or tweet.  What happens after we post some content?  Can just anyone edit it or delete it, or is that behavior restricted to us as the content's author?
 
-The authorization rule for now is that any authenticated user has permission to
-create a entry, but *only their entries*.  In other words, anyone can sign up and
-create a entry, but I'm the only person who has permission to update or destroy
-entrys I've created.
-
-Start by copying your [Blog 1](../../../blog-1-anonymous-blog-challenge) directory into the source directory for this challenge and build off of it. 
 
 ## Releases
 
@@ -58,6 +48,4 @@ byline should link to this page.
 
 ## Resources
 
-* [DBC Shortener with users challenge](../../../sinatra-url-shortener-with-users-challenge)
-
-[shortener-with-users]: ../../../sinatra-url-shortener-with-users-challenge
+[blog-1-challenge]: ../../../blog-1-anonymous-blog-challenge

@@ -1,0 +1,20 @@
+<% if @errors %>
+<span>Something went wrong:</span>
+  <ul class="error-list">
+    <% @errors.each do |error| %>
+      <li class="error-item"><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form method="post" action="/entries/<%= @entry.id %>">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="title-input">Title:</label>
+  <input id="title-input" name="entry[title]" type="text" value="<%= @entry.try(:title) %>">
+
+  <label for="body-textarea">Body:</label>
+  <textarea id="body-textarea" name="entry[body]"><%= @entry.try(:body) %></textarea>
+
+  <input type="submit">
+</form>

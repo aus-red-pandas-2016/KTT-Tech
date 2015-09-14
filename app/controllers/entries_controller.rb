@@ -27,3 +27,29 @@ get '/entries/:id' do
     redirect '/entries'
   end
 end
+
+get '/entries/:id/edit' do
+  begin
+    @entry = Entry.find(params[:id])
+    erb :'entries/edit'
+  rescue ActiveRecord::RecordNotFound
+    redirect '/entries'
+  end
+end
+
+put '/entries/:id' do
+  begin
+    @entry = Entry.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect '/entries'
+  end
+
+  @entry.assign_attributes(params[:entry])
+
+  if @entry.save
+    redirect "entries/#{@entry.id}"
+  else
+    @errors = @entry.errors.full_messages
+    erb :'entries/edit'
+  end
+end

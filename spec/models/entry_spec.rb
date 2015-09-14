@@ -51,7 +51,16 @@ describe Entry do
     end
   end
 
-  describe 'stubbing post body' do
+  describe '#date_written' do
+    it 'converts created_at date to "Month Day, Year" format' do
+      entry = Entry.new
+      allow(entry).to receive(:created_at).and_return(Time.new(2015, 04, 15))
+
+      expect(entry.date_written).to eq "April 15, 2015"
+    end
+  end
+
+  describe '#stubbed_body' do
     context 'if body has more than twentyfive words' do
       it 'cuts body to first twenty-five words' do
         entry = Entry.create(title: "Title Words", body: "One two three. \"Four five six\" seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen. Seventeen eighteen! Nineteen twenty twentyone twentytwo twentythree twentyfour twentyfive twentysix twentyseven twentyeight twentynine thirty.")

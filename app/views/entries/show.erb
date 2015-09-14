@@ -2,3 +2,7 @@
 <span><%= "Written on #{@entry.date_written}" %></span>
 <p><%= @entry.body %></p>
 <a href="/entries/<%= @entry.id %>/edit">edit</a>
+<form method="post" action="/entries/<%= @entry.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form>

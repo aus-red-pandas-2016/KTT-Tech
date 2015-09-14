@@ -53,3 +53,14 @@ put '/entries/:id' do
     erb :'entries/edit'
   end
 end
+
+delete '/entries/:id' do
+  begin
+    @entry = Entry.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect '/entries'
+  end
+
+  @entry.destroy
+  redirect '/entries'
+end

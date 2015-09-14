@@ -19,6 +19,7 @@ group :test do
   gem 'rack-test'
   gem 'rspec', '~>3.0'
   gem 'capybara'
+  gem 'database_cleaner', '~> 1.4.1'
 end
 
 group :test, :development do

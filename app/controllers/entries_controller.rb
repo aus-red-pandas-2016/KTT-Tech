@@ -1,0 +1,3 @@
+get '/entries' do
+
+end

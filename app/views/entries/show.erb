@@ -1,5 +1,5 @@
 <h1><%= @entry.title %></h1>
-<span><%= "Written on #{@entry.date_written}" %></span>
+<span><%= "Written on #{long_form_date(@entry.created_at)}." %></span>
 <p><%= @entry.body %></p>
 <a href="/entries/<%= @entry.id %>/edit">edit</a>
 <form method="post" action="/entries/<%= @entry.id %>">

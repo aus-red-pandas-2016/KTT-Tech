@@ -5,10 +5,6 @@ class Entry < ActiveRecord::Base
     Entry.order(created_at: :desc).limit(5)
   end
 
-  def date_written
-    created_at.strftime('%B %e, %Y')
-  end
-
   def stubbed_body
     return body if less_than_26_words_long?
     first_25_words +  '...'

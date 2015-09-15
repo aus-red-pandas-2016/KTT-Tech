@@ -2,7 +2,7 @@
   <% @entries.each do |entry| %>
     <li class="entry-item">
       <span class="entry-title"><%= entry.title %></span>
-      <span class="entry-date"><%= "Written on #{entry.date_written}." %></span>
+      <span class="entry-date"><%= "Written on #{long_form_date(entry.created_at)}." %></span>
       <p class="entry-stub"><%= entry.stubbed_body %></p>
     </li>
   <% end %>

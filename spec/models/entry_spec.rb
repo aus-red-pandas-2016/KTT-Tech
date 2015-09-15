@@ -51,15 +51,6 @@ describe Entry do
     end
   end
 
-  describe '#date_written' do
-    it 'converts created_at date to "Month Day, Year" format' do
-      entry = Entry.new
-      allow(entry).to receive(:created_at).and_return(Time.new(2015, 04, 15))
-
-      expect(entry.date_written).to eq "April 15, 2015"
-    end
-  end
-
   describe '#stubbed_body' do
     context 'if body has more than twentyfive words' do
       it 'cuts body to first twenty-five words' do

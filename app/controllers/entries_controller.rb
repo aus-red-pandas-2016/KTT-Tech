@@ -21,7 +21,7 @@ end
 
 
 # route handlers dealing with a specific entry
-before '/entries/:id*' do
+before /entries\/\d+/ do
   @entry = Entry.find_by(id: params[:id])
   halt(404, erb(:'404')) if @entry.nil?
 end

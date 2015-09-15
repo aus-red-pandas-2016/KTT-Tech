@@ -1,11 +1,7 @@
+# route handlers dealing with the collection
 get '/entries' do
   @entries = Entry.most_recent
-
   erb :'entries/index'
-end
-
-get '/entries/new' do
-  erb :'entries/new'
 end
 
 post '/entries' do
@@ -19,31 +15,26 @@ post '/entries' do
   end
 end
 
+get '/entries/new' do
+  erb :'entries/new'
+end
+
+
+# route handlers dealing with a specific entry
+before '/entries/:id*' do
+  @entry = Entry.find_by(id: params[:id])
+  halt(404, erb(:'404')) if @entry.nil?
+end
+
 get '/entries/:id' do
-  begin
-    @entry = Entry.find(params[:id])
-    erb :'entries/show'
-  rescue ActiveRecord::RecordNotFound
-    redirect '/entries'
-  end
+  erb :'entries/show'
 end
 
 get '/entries/:id/edit' do
-  begin
-    @entry = Entry.find(params[:id])
-    erb :'entries/edit'
-  rescue ActiveRecord::RecordNotFound
-    redirect '/entries'
-  end
+  erb :'entries/edit'
 end
 
 put '/entries/:id' do
-  begin
-    @entry = Entry.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    redirect '/entries'
-  end
-
   @entry.assign_attributes(params[:entry])
 
   if @entry.save
@@ -55,12 +46,6 @@ put '/entries/:id' do
 end
 
 delete '/entries/:id' do
-  begin
-    @entry = Entry.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    redirect '/entries'
-  end
-
   @entry.destroy
   redirect '/entries'
 end

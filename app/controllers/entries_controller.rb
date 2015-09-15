@@ -21,17 +21,12 @@ end
 
 
 # route handlers dealing with a specific entry
-before /entries\/\d+/ do
-  @entry = Entry.find_by(id: params[:id])
-  halt(404, erb(:'404')) if @entry.nil?
+before '/entries/:id' do
+  find_and_ensure_entry
 end
 
 get '/entries/:id' do
   erb :'entries/show'
-end
-
-get '/entries/:id/edit' do
-  erb :'entries/edit'
 end
 
 put '/entries/:id' do
@@ -48,4 +43,9 @@ end
 delete '/entries/:id' do
   @entry.destroy
   redirect '/entries'
+end
+
+get '/entries/:id/edit' do
+  find_and_ensure_entry
+  erb :'entries/edit'
 end

@@ -32,8 +32,19 @@ In this release, we're going to begin to introduce authorization into our applic
 We'll modify our user interface to hide links to the new entry form from guest users.  Just updating our user interface isn't enough.  What happens, if a user navigates to the new entry form not by clicking a link, but by entering the URL directly?  What if someone makes a request to create a new post from the command line?  Can we catch these in our route handlers?  
 
 **User Interface Changes**  
-- When no user is logged in, any links to the new entry form should be removed (see [user logged in mockup](readme-assets/auth-nav-user.png) and [no user mockup](readme-assets/no-user-no-link-to-form.png)).
-- If a request is made to get the new entry form page or to create a new entry but there is no user logged in, then the response should alert users that something went wrong (see [mockup](readme-assets/something-went-wrong.png)); this is already the behavior if any user tries to access an entry that does not exist.
+- When no user is logged in, any links to the new entry form should be removed (see [user logged in mockup](readme-assets/auth-nav-user.png) and [no user mockup](readme-assets/no-user-no-link-to-form.png)).  Links for editing and deleting a post should also be hidden.
+- If a request is made to get the new entry form page, to get the edit entry form page, to create a new entry, etc. but there is no user logged in, then the response should alert users that something went wrong (see [mockup](readme-assets/something-went-wrong.png)); this is already the behavior if any user tries to access an entry that does not exist.
+
+
+### Release 2: Restrict Editing and Deleting to Entry Author
+Our next step in adding authorization to our application will be to limit who can edit and delete a particular entry.  We want only an entry's author to be able to edit and delete it.
+
+This means that we'll need a way to associate users with entries.  When a user creates a new entry, that new entry should be associated with that user.  Do we need to make changes to our database to support this behavior?  Do we need to update our models?  What about our controllers?
+
+**User Interface Changes**
+- The entry's author should be displayed next to the time an entry was written (see [mockup](readme-assets/index-show-author-username.png)).
+- Only an entry's author should be able to see any links to edit or delete it.
+- Unless the user making the request is the entry's author, if a request is made to get the edit entry form page, to update an entry, to delete an entry, etc., then the response should alert users that something went wrong (see [mockup](readme-assets/something-went-wrong.png)).
 
 
 ### Release 3: Add New Information to Views

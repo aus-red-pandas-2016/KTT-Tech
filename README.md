@@ -12,18 +12,21 @@ The focus of this challenge is on who has permission to do what in our applicati
 Before we begin implementing authentication and authorization, we need to set up the site.  The provided codebase is for a functioning one-model CRUD application:  a blog site.  Let's browse through the code, taking a look at the models, controllers, helpers, views, migrations, etc.  Then, after creating, migrating, and seeding the database, let's open the application in the browser.
 
 
-### Release 0: Integrate User Signup
+### Release 0: User Signup
+Let's begin by adding a user authentication feature.  All we want to do for this particular release is to allow users to register for our site, login, and logout.
 
-Create the appropriate controllers for user authentication.  You'll want routes
-that correspond to:
+When users signup, they will provide a username, e-mail address, and a password; they will login with their e-mail address and password.
 
-1. A user being prompted to log in
-2. A user submitting their email + password
-3. A user logging out
-4. A user being prompted to sign up
-5. A user submitting their information to create an account
+We'll need to add a table in our database to hold user data.  Think about what constraints we should place on our database.  Do we need to add any indexes for quick lookup?  Should any fields be required and/or unique?  We'll also need a model to represent users in our applications.  Does our model need an validations?
 
-The ability to create a `Entry` is restricted to users who have signed up.  For now anyone can see any `Entry`.
+**User Interface Changes**  
+The following list describes some changes we should make to our user interface.
+
+- When no user is logged in, links to register and login should appear in the navigation options (see [mockup](readme-assets/auth-nav-no-user.png)).
+- When a user is logged in, the user's username and a link to logout should appear in the navigation options (see [mockup](readme-assets/auth-nav-user.png)).
+- When a user clicks the link to register, they should be taken to a page with a form for submitting their username, e-mail address, and password (see [mockup](readme-assets/registration-form.png)).  We'll need a similar page for login.
+- If something goes wrong during registration, the user should be alerted to the problem (see [mockup](readme-assets/registration-form-show-errors.png)).  Similar feedback should be provided if logging in fails.
+
 
 ### Release 1: Authorization
 

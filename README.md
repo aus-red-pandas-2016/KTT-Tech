@@ -47,19 +47,15 @@ This means that we'll need a way to associate users with entries.  When a user c
 - Unless the user making the request is the entry's author, if a request is made to get the edit entry form page, to update an entry, to delete an entry, etc., then the response should alert users that something went wrong (see [mockup](readme-assets/something-went-wrong.png)).
 
 
-### Release 3: Add New Information to Views
+### Release 3: Show Entries by Author
+Now that we can associate users and entries, let's allow users to see entries written by a particular user.  We'll want to use a nested route, something like `/users/:id/entries`—depending on your model names.  When we visit such a route, we'll see a list of all entries written by that particular user.
 
-Now that entries have authors, display author-related information on the entry,
-e.g., a byline.
 
-Also add a route so that when someone visits
+**User Interface Changes**
+- Usernames should appears as links to a page showing all the entries written by that user (see [mockup](readme-assets/usernames-as-links.png)).
+- The page showing all a particular user's entries should look similar to the page showing the most recent entries (see [mockup](readme-assets/user-entries.png)); we don't need to use the username as a link, since we're already on the page.
+- If a users attempts to get see the entries written by a user that doesn't exist, then the response should alert users that something went wrong (see [mockup](readme-assets/something-went-wrong.png)).
 
-```text
-/users/123/entries
-```
-
-we see a list of all entries created by user #123.  The author's name in the
-byline should link to this page.
 
 ## Resources
 

@@ -61,3 +61,5 @@ Now that we can associate users and entries, let's allow users to see entries wr
 
 ## Conclusion
 Authorization is an important part of designing the user experience of a web application.  We need to control who can do what in our applications.  Sometimes we'll have behaviors limited to a small group of users (e.g., administrators).  Other times, we'll want to help protect user content, as we've done in this challenge.  When we do this, we want to be thorough and close any loopholes we can think of.  It's not enough to simply hide links on our webpages.  We need to look at our controllers, too.
+
+[blog-1-challenge]: ../../../blog-1-anonymous-blog-challenge

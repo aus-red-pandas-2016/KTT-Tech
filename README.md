@@ -11,6 +11,8 @@ The focus of this challenge is on who has permission to do what in our applicati
 ### Pre-release: Setup
 Before we begin implementing authentication and authorization, we need to set up the site.  The provided codebase is for a functioning one-model CRUD application:  a blog site.  Let's browse through the code, taking a look at the models, controllers, helpers, views, migrations, etc.  Then, after creating, migrating, and seeding the database, let's open the application in the browser.
 
+*Note:* If we want to run any tests, we'll need to prepare the test database using the `db:test:prepare` Rake task.
+
 
 ### Release 0: User Signup
 Let's begin by adding a user authentication feature.  All we want to do for this particular release is to allow users to register for our site, login, and logout.

@@ -20,23 +20,21 @@ When users signup, they will provide a username, e-mail address, and a password;
 We'll need to add a table in our database to hold user data.  Think about what constraints we should place on our database.  Do we need to add any indexes for quick lookup?  Should any fields be required and/or unique?  We'll also need a model to represent users in our applications.  Does our model need an validations?
 
 **User Interface Changes**  
-The following list describes some changes we should make to our user interface.
-
 - When no user is logged in, links to register and login should appear in the navigation options (see [mockup](readme-assets/auth-nav-no-user.png)).
 - When a user is logged in, the user's username and a link to logout should appear in the navigation options (see [mockup](readme-assets/auth-nav-user.png)).
 - When a user clicks the link to register, they should be taken to a page with a form for submitting their username, e-mail address, and password (see [mockup](readme-assets/registration-form.png)).  We'll need a similar page for login.
 - If something goes wrong during registration, the user should be alerted to the problem (see [mockup](readme-assets/registration-form-show-errors.png)).  Similar feedback should be provided if logging in fails.
 
 
-### Release 1: Authorization
+### Release 1: Restrict Writing Entries to Registered Users
+In this release, we're going to begin to introduce authorization into our application.  Users can already register, login, and logout.  We now want to modify our application so that only users who are registered and logged are able to create new entries.
 
-The application has the following authorization rules:
+We'll modify our user interface to hide links to the new entry form from guest users.  Just updating our user interface isn't enough.  What happens, if a user navigates to the new entry form not by clicking a link, but by entering the URL directly?  What if someone makes a request to create a new post from the command line?  Can we catch these in our route handlers?  
 
-1. A user who is not logged in can only see entries
-2. A user who is logged in can create entries
-3. A user who is logged in can only update or destroy entries that they themselves have created
+**User Interface Changes**  
+- When no user is logged in, any links to the new entry form should be removed (see [user logged in mockup](readme-assets/auth-nav-user.png) and [no user mockup](readme-assets/no-user-no-link-to-form.png)).
+- If a request is made to get the new entry form page or to create a new entry but there is no user logged in, then the response should alert users that something went wrong (see [mockup](readme-assets/something-went-wrong.png)); this is already the behavior if any user tries to access an entry that does not exist.
 
-If a user tries to do any of the above and isn't permitted, redirect them away from the page to somewhere sensible, e.g., the homepage.
 
 ### Release 3: Add New Information to Views
 

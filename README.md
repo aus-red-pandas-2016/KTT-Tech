@@ -8,6 +8,9 @@ The focus of this challenge is on who has permission to do what in our applicati
 
 
 ## Releases
+### Pre-release: Setup
+Before we begin implementing authentication and authorization, we need to set up the site.  The provided codebase is for a functioning one-model CRUD application:  a blog site.  Let's browse through the code, taking a look at the models, controllers, helpers, views, migrations, etc.  Then, after creating, migrating, and seeding the database, let's open the application in the browser.
+
 
 ### Release 0: Integrate User Signup
 

@@ -271,3 +271,18 @@ a {
 .wrap-float {
   overflow: auto;
 }
+
+.logo-container {
+  border: 5px solid #054372;
+  color: #054372;
+  width: 305px;
+  height: 305px;
+  border-radius: 305px;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo {
+  width:160px;
+}

@@ -1,26 +1,26 @@
-# Blog entry content courtesy of baconipsum.com.
+# Blog entry content courtesy of veggieipsum.com.
 
 content_for_entries = [
-  { :title => 'Tenderloin ut Pork Loin',
-    :body  => 'Bacon ipsum dolor amet brisket pastrami non ribeye, exercitation do turducken quis ad flank. Do corned beef ea, consequat ground round minim irure turducken capicola ham kielbasa nisi pork loin tenderloin magna. Ipsum incididunt shankle kevin. Nisi alcatra cupim hamburger pork chop occaecat dolor.' },
-  { :title => 'Sunt Veniam Cow',
-    :body  => 'Doner exercitation picanha excepteur tempor occaecat elit non. Commodo ut spare ribs hamburger esse, nulla fatback. Turducken ground round ipsum, cillum aute meatloaf commodo doner ham hock in kevin alcatra. Bresaola pig quis ullamco dolore reprehenderit flank lorem rump. Pork chop consequat sirloin, salami ullamco kevin veniam dolore dolore. Fugiat venison qui corned beef id pastrami. Esse strip steak filet mignon chuck kevin.' },
-  { :title => 'Cillum Dolor Corned Beef',
-    :body  => 'Est consequat ad. Turducken sint elit irure ut ham hock. Fugiat aute ham salami, shankle occaecat tongue velit bresaola lorem esse ut. Ut proident sed, cupidatat landjaeger swine andouille officia veniam ham hock cupim chuck magna. Mollit fatback adipisicing consequat esse pork belly ground round dolore shankle elit reprehenderit drumstick.' },
-  { :title => 'Prosciutto Cillum Shankle Ball Tip',
-    :body  => 'Andouille biltong shankle tail bacon meatloaf officia, exercitation nisi dolor turkey porchetta. Beef prosciutto tenderloin eu aliquip spare ribs rump sint. In meatloaf minim, ball tip proident aliqua swine meatball enim deserunt velit. Aute labore salami, ea magna ullamco ipsum andouille aliqua. Ham cupim kielbasa shankle turducken corned beef.' },
-  { :title => 'Ut Pancetta Turkey Fatback',
-    :body  => 'Non ham hock nostrud beef ribs biltong alcatra. Nulla bresaola dolore cow eiusmod consequat ribeye salami, picanha sint. Voluptate et ut dolor. Boudin cow venison short loin, in salami voluptate chicken. Do salami frankfurter adipisicing eiusmod, proident alcatra.' },
-  { :title => 'Voluptate Bresaola Porchetta Exercitation',
-    :body  => 'Ipsum tail ea anim, ex leberkas filet mignon dolore in ut est. Sed ground round occaecat, leberkas ham rump ham hock deserunt ad sunt ut meatloaf chuck flank hamburger. Kevin in pork belly cow. Boudin ut occaecat, nulla sirloin leberkas et commodo excepteur. Ut aliquip biltong cillum dolore doner.' },
-  { :title => 'Shankle Shank Nostrud',
-    :body  => 'Consectetur enim pig minim nisi strip steak ad bacon. Ipsum esse flank magna minim. Ex id ullamco brisket short loin. Picanha tongue andouille, dolore sint sirloin consectetur.' },
-  { :title => 'Spare Ribs Velit in Aliqua Ham',
-    :body  => 'Picanha andouille elit pastrami nostrud pork. Salami dolore irure in in drumstick porchetta tongue ex, pork belly cupidatat aliquip ball tip boudin elit. Veniam do pastrami beef, prosciutto short loin non aliquip irure eiusmod sausage salami flank. Et aliqua quis commodo. Porchetta reprehenderit dolore drumstick incididunt adipisicing. Chicken eiusmod adipisicing, flank cupidatat minim landjaeger et sirloin shankle turkey fugiat.' },
-  { :title => 'Pork Chop Cow Duis Consectetur',
-    :body  => 'Aute minim dolor dolore pastrami pig nostrud prosciutto elit. Nisi sed occaecat et, sausage ut beef ad chuck mollit lorem ea. Eu ut short loin cupim ullamco duis strip steak jerky cupidatat tongue beef ribs. Pancetta ground round non leberkas. Ut ullamco sunt pork chop corned beef in salami chuck andouille officia do. Enim ut dolor chuck, pastrami brisket adipisicing corned beef excepteur beef fugiat sed. Tri-tip duis incididunt id.' },
-  { :title => 'Turducken Jowl Pastrami',
-    :body  => 'Venison dolore labore ut flank incididunt turducken beef ribs pariatur non culpa duis. Labore boudin incididunt ex. Exercitation beef nisi hamburger quis nulla cupim. Ad enim meatloaf in consequat. Brisket bacon excepteur sausage do et ball tip leberkas dolore cillum frankfurter ea est occaecat. Pork loin spare ribs corned beef, qui jowl ipsum proident minim biltong incididunt voluptate leberkas boudin anim in.' }
+  { :title => "Salsify Taro Catsear Garlic",
+    :body  => "Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini."},
+  { :title => "Kohlrabi Radish Okra Azuki",
+    :body  => "Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. "},
+  { :title => "Lotus Root Water Spinach",
+    :body  => "Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. "},
+  { :title => "Bean Swiss Chard Seakale",
+    :body  => "Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley"},
+  { :title => "Magis Kohlrabi Welsh Onion",
+    :body  => "Celery quandong swiss chard chicory earthnut pea potato. Salsify taro catsear garlic gram celery bitterleaf wattle seed collard greens nori. Grape wattle seed kombu beetroot horseradish carrot squash brussels sprout chard."},
+  { :title => "Parsley Shallot Courgette Tatsoi",
+    :body  => "Beetroot water spinach okra water chestnut ricebean pea catsear courgette summer purslane. Water spinach arugula pea tatsoi aubergine spring onion bush tomato kale radicchio turnip chicory salsify pea sprouts fava bean. "},
+  { :title => "Bean Mustard Tigernut",
+    :body  => "Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. Catsear cauliflower garbanzo yarrow salsify chicory garlic bell pepper napa cabbage lettuce tomato kale arugula melon sierra leone bologi rutabaga tigernut."},
+  { :title => "Aubergine Spring Onion",
+    :body  => "Sea lettuce gumbo grape kale kombu cauliflower salsify kohlrabi okra sea lettuce broccoli celery lotus root carrot winter purslane turnip greens garlic. JÃ­cama garlic courgette coriander radicchio plantain scallion cauliflower fava bean desert raisin spring onion chicory bunya nuts."},
+  { :title => "Chicory Celtuce Parsley",
+    :body  => "Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. Catsear cauliflower garbanzo yarrow salsify chicory garlic bell pepper napa cabbage lettuce tomato kale arugula melon sierra leone bologi rutabaga tigernut. "},
+  { :title => "Coriander Yarrow Sweet Pepper",
+    :body  => "Water spinach arugula pea tatsoi aubergine spring onion bush tomato kale radicchio turnip chicory salsify pea sprouts fava bean. Dandelion zucchini burdock yarrow chickpea dandelion sorrel courgette turnip greens tigernut soybean radish artichoke wattle seed endive groundnut broccoli arugula."}
 ]
 
 Entry.create!(content_for_entries)

@@ -22,7 +22,7 @@ end
 
 # route handlers dealing with a specific entry
 before '/entries/:id' do
-  find_and_ensure_entry
+  @entry = find_and_ensure_entry
 end
 
 get '/entries/:id' do
@@ -46,6 +46,6 @@ delete '/entries/:id' do
 end
 
 get '/entries/:id/edit' do
-  find_and_ensure_entry
+  @entry = find_and_ensure_entry
   erb :'entries/edit'
 end

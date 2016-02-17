@@ -22,7 +22,8 @@ end
 
 # route handlers dealing with a specific entry
 before '/entries/:id' do
-  @entry = find_and_ensure_entry
+  pass if request.path_info.match /new/
+  @entry = find_and_ensure_entry(params[:id])
 end
 
 get '/entries/:id' do
@@ -46,6 +47,6 @@ delete '/entries/:id' do
 end
 
 get '/entries/:id/edit' do
-  @entry = find_and_ensure_entry
+  @entry = find_and_ensure_entry(params[:id])
   erb :'entries/edit'
 end

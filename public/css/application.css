@@ -11,7 +11,7 @@
 /* element styling */
 html {
   height: 100%;
-  background-color: #27AAE1;
+  background-color: #32bb7d;
   background: url(../images/diamond-bg.jpg);
   background-attachment: fixed;
   line-height: 1.4;
@@ -22,17 +22,17 @@ body {
 }
 
 a {
-  color: #27AAE1;
+  color: #32bb7d;
   text-decoration: none;
 }
 
   a:hover {
-    color: #006fc2;
+    color: #6ec7a5;
     text-decoration: underline;
   }
 
 input[type=text], textarea {
-  color: #054372;
+  color: #05724f;
 }
 
 
@@ -59,8 +59,8 @@ input[type=text], textarea {
 
 
 /* formatting */
-.bg-dk-blue {
-  background-color: #054372;
+.bg-dk-green {
+  background-color: #05724f;
 }
 
 .bg-white {
@@ -68,7 +68,7 @@ input[type=text], textarea {
 }
 
 .button {
-  background: #27AAE1;
+  background: #32bb7d;
   color: #fefefe;
   padding: 1em;
   text-decoration: none;
@@ -77,11 +77,11 @@ input[type=text], textarea {
   .button:hover {
     color: white;
     text-decoration: none;
-    background-color: #006fc2;
+    background-color: #6ec7a5;
   }
 
-.c-dk-blue {
-  color: #054372;
+.c-dk-green {
+  color: #05724f;
 }
 
 .c-lt-gray {
@@ -252,8 +252,8 @@ input[type=text], textarea {
   border-radius: 1em;
 }
 
-.t-light-blue {
-  color: #27AAE1;
+.t-light-green {
+  color: #32bb7d;
 }
 
 .text-c {
@@ -277,8 +277,8 @@ input[type=text], textarea {
 }
 
 .logo-container {
-  border: 5px solid #054372;
-  color: #054372;
+  border: 5px solid #05724f;
+  color: #05724f;
   width: 305px;
   height: 305px;
   border-radius: 50%;

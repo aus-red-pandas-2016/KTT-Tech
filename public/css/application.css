@@ -31,6 +31,10 @@ a {
     text-decoration: underline;
   }
 
+input[type=text], textarea {
+  color: #054372;
+}
+
 
 /* positioning */
 .block {

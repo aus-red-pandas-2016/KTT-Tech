@@ -20,6 +20,8 @@ group :test do
   gem 'rspec', '~>3.0'
   gem 'capybara'
   gem 'database_cleaner', '~> 1.4.1'
+  gem 'pry'
+  gem 'irbtools', require: 'irbtools/binding'
 end
 
 group :test, :development do

@@ -4,7 +4,7 @@
       <form method="post" action='/burns/<%= burn.id %>'></form>
       <h2><a href='/burns/<%= burn.id %>'><%= burn.title %></a></h2>
       <p>
-        <span class='user'>burn.user</span>
+        <span class='user'><%= burn.user.username %></span>
         <span class='votes'><%= burn.votes %></span>
         <span class='timestamp'><%= burn.created_at %></span>
       </p>

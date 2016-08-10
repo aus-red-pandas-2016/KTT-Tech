@@ -17,7 +17,7 @@ end
 
 get '/burns/:id' do
   @burn = Burn.find(params[:id])
-  erb :burn
+  erb :'burns-id'
 end
 
 delete '/burns/:id' do

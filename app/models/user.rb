@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   has_many :burns
   has_many :counters
-  has_many :comments, as: commentable
+  has_many :comments, as: :commentable
 
   validates :username, {uniquenss: true}
   validates :username, :password, {presence: true}

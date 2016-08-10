@@ -13,7 +13,6 @@ post '/burns' do
   else
     redirect '/burns'
   end
-
 end
 
 get '/burns/:id' do

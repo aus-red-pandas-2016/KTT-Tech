@@ -35,3 +35,12 @@ get '/log-out' do
   session[:user_id] = nil
   redirect '/login'
 end
+
+get '/burns' do
+  @burns = Burn.all
+  erb :burn
+end
+
+post '/burns' do
+  @burn = Burn.create()
+end

@@ -1,9 +1,10 @@
 <div class='burn-list'>
   <%@burns.each do |burn| %>
     <article id="<%=burn.id%>">
+
       <h2><a href='/burns/<%= burn.id %>'><%= burn.title %></a></h2>
       <p>
-        <span class='user'>user name</span>
+        <span class='user'>burn.user</span>
         <span class='votes'><%= burn.votes %></span>
         <span class='burn_description'><%= burn.burn_description %></span>
         <span class='timestamp'><%= burn.time_since_creation %></span>
@@ -12,8 +13,3 @@
     <% end %>
 </div>
 
-
-<form id="burns" method="post" actions="/burns-new">
-  <input type="text" name="title" placeholder="title">
-  <input type="submit" value="Submit New Burn">
-</form>

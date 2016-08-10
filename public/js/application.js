@@ -2,9 +2,9 @@ $(document).ready(function() {
   $("#burns").on("submit", function(Event){
     var info = $(this).serialize();
       $.ajax({
-        url: '/burns'
-        method: 'POST'
-        data: info
+        url: '/burns',
+        method: 'POST',
+        data: info,
         dataType: 'json'
       })
       .done(function(result){
@@ -12,9 +12,7 @@ $(document).ready(function() {
         $("burns").find("input[type=text]").val("");
       })
   })
-});
 
-$(document).ready(function() {
   $('.burn-list').on('submit', 'form', function(event){
     event.preventDefault();
     var burn_id = $(this).closest('article').attr('id');
@@ -32,7 +30,7 @@ $(document).ready(function() {
 
   $('.post-container').on('click', 'a.delete',function(event){
     event.preventDefault();
-    var post = $(this).closest('article')
+    var post = $(this).closest('article');
     var post_id = post.attr('id');
     $.ajax({
         url: '/posts/'+ post_id,
@@ -42,3 +40,4 @@ $(document).ready(function() {
       post.remove();
     });
   });
+});

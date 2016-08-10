@@ -1,14 +1,14 @@
-<div class='burn-list'>
+<div class='burn-select'>
   <%@burns.each do |burn| %>
     <article id="<%=burn.id%>">
 
-      <h2><a href='/burns/'><%= burn.title %></a></h2>
+      <h2><a href='/burns/<%= burn.id %>'><%= burn.title %></a></h2>
       <p>
         <span class='user'>burn.user</span>
         <span class='votes'><%= burn.votes %></span>
+        <span class='burn_description'><%= burn.burn_description %></span>
         <span class='timestamp'><%= burn.time_since_creation %></span>
       </p>
     </article>
     <% end %>
 </div>
-

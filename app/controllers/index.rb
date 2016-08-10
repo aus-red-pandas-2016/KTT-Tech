@@ -6,7 +6,7 @@ get '/sign-up' do
   erb :sign_up_form
 end
 
-post 'sign-up' do
+post '/sign-up' do
   user = User.create(params[:user])
   if user.save
     session[:user_id] = user.id

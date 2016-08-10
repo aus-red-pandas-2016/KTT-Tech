@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :counters
   has_many :comments, as: :commentable
 
-  validates :username, {uniquenss: true}
+  validates :username, uniqueness: true
   validates :username, :password, {presence: true}
 
   def password

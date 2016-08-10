@@ -1,3 +1,4 @@
-get '/' do
-  redirect '/entries'
+get '' do
+
+  erb :index 
 end

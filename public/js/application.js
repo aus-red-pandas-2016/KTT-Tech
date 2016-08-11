@@ -9,7 +9,6 @@ $(document).ready(function() {
   $(commentForm).on('submit', function(event){
     event.preventDefault();
     var comment_description = $("textarea[name=description]").val()
-    debugger
     if (comment_description == ""){
       alert("You cannot submit an empty comment.");
         $("#comments_button").show();

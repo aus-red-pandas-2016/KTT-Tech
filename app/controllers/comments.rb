@@ -5,7 +5,6 @@ end
 
 post '/comments' do
   @comment = Comment.create(description: params[:comment_description], user_id: current_user.id)
-  binding.pry
   if request.xhr? && @comment.save
     status 200
     erb(:"/comments/_comment", layout: false, locals: {comment: @comment} )

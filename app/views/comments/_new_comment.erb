@@ -1,6 +1,7 @@
 <form id="new_comments_form" hidden method="post" action="/comments">
   <label for="comment_description">Comment:</label>
   <textarea required id="comment_description" name="description"></textarea>
+  <span class='burn_username'><% current_user.username %></span>
   <% if current_user %>
     <input type="submit" value="Submit New Comment" class="button">
   <% else %>

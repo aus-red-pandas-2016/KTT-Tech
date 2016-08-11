@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-<div class='burn-select'>
-    <article id="<%= @burn.id%>">
-      <h2><a href='/burns/<%= @burn.id %>'><%= @burn.title %></a></h2>
-      <p>
-        <span class='user'><%= @burn.user.username %></span>
-        <span class='votes'><%= @burn.votes %></span>
-        <span class='burn_description'><%= @burn.burn_description %></span>
-        <span class='timestamp'><%= @burn.created_at %></span>
-      </p>
-    </article>
-
     <div class='burn-comment-list'>
       <% @burn.comments = @comments %>
       <% @comments.each do |comment| %>
@@ -25,7 +13,6 @@
     <%= erb(:_new_comment) %>
 
 
-=======
 <div class="ui segment">
   <div class="ui items">
     <div class="item">
@@ -66,6 +53,6 @@
       <input id="counter-submission" type="submit" class="ui teal submit button"value="Submit New Counter">
     </form>
   </div>
->>>>>>> master
+
 </div>
  <% end %>

@@ -42,12 +42,16 @@
     <% end %>
   </div>
   <div class="logo-container">
-        <span id="logo">
-        <h1><i class="database icon"></i>Smack Overflow </h1>
-        </span>
-      </div>
-  <div class="ui segment">
-  <%= yield %>
+    <span id="logo">
+      <h1><i class="database icon"></i>Smack Overflow </h1>
+    </span>
   </div>
+  <div id="burns">
+    <i class="fire icon"></i>
+    <form method="get" action="/burns-new">
+      <input type="submit" class="ui teal submit button" value="Submit New Burn">
+    </form>
+  </div>
+  <%= yield %>
 </body>
 </html>

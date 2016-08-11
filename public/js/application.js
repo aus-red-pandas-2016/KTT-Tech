@@ -8,7 +8,7 @@ $(document).ready(function() {
 
   $(commentForm).on('submit', function(event){
     event.preventDefault();
-    var comment_description = $("textarea[name=description]").val()
+    var formData = $(this).serialize()
     if (comment_description == ""){
       alert("You cannot submit an empty comment.");
         $("#comments_button").show();
@@ -16,7 +16,7 @@ $(document).ready(function() {
         $.ajax({
           url:'/comments',
           method: 'POST',
-          data: {comment_description: comment_description}
+          data: formData
         })
         .done(function(result){
           $(".burn-comment-list").append(result);

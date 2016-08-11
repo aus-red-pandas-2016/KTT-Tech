@@ -1,16 +1,14 @@
     <div class='burn-comment-list'>
-      <% @burn.comments = @comments %>
       <% @comments.each do |comment| %>
-        <form method="post" action='/burns/<%= @burn.id %>'></form>
         <%= erb(:'/comments/_comment', locals: {comment: comment}) %>
       <% end %>
     </div>
 
-    <form id="comments_button" method="get" action="/comments-new">
+    <button id="comments_button">
       <input type="submit" value="Submit New Comment">
-    </form>
+    </button>
 
-    <%= erb(:_new_comment) %>
+    <%= erb(:"comments/_new_comment", locals: {burn_id: @burn.id  }) %>
 
 
 <div class="ui segment">

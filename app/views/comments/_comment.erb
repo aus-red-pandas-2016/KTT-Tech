@@ -1,5 +1,6 @@
  <p>
   <span class='burn_comment_description'><%= comment.description %></span>
-  <span class='burn_username'><%= current_user.username %></span>
-  <span class='timestamp'><%= comment.created_at %></span>
+  <div class="extra">
+    <%= comment.user.username %>   |   <%= long_form_date(comment.created_at) %>
+  </div>
 </p>

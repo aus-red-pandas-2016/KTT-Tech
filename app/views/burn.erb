@@ -1,0 +1,17 @@
+<div class="ui segment burn-list">
+  <%@burns.each do |burn| %>
+    <div class="ui items">
+      <div class="item">
+        <article id="<%= burn.id %>" class="content">
+          <a id="burn-titles" href='/burns/<%= burn.id %>' class="header"><%= burn.title.split.map(&:capitalize).join(' ') %></a>
+        <div class="description">
+          <p><%= burn.points %> points</p>
+        </div>
+        <div class="extra">
+          <%= burn.user.username %>  |  <%= long_form_date(burn.created_at ) %>
+        </div>
+      </article>
+    </div>
+  <% end %>
+</div>
+

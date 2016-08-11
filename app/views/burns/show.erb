@@ -1,6 +1,5 @@
-    <div class='burn-comment-list'>
-      <% @burn.comments = @comments %>
-      <% @comments.each do |comment| %>
+<!--     <div class='burn-comment-list'>
+      <% @burn_comments.each do |comment| %>
         <form method="post" action='/burns/<%= @burn.id %>'></form>
         <%= erb(:'/comments/_comment', locals: {comment: comment}) %>
       <% end %>
@@ -10,7 +9,7 @@
       <input type="submit" value="Submit New Comment">
     </form>
 
-    <%= erb(:_new_comment) %>
+    <%= erb(:_new_comment) %> -->
 
 
 <div class="ui segment">
@@ -27,8 +26,29 @@
         <div class="extra">
           <%= @burn.user.username %>   |   <%= long_form_date(@burn.created_at) %>
         </div>
+        <!-- begin burn comments section -->
+        <div class="content">
+          <ul class"ui list">
+            <li>
+            <% @burn_comments.each do |comment| %>
+              <form method="post" action='/burns/<%= @burn.id %>'></form>
+              <%= erb(:'/comments/_comment', locals: {comment: comment}) %>
+
+            <% end %>
+            </li>
+          </ul>
+        </div>
+        <!-- end burn comment section -->
+        <form id="comments_button" method="get" action="/comments-new">
+          <input type="submit" value="Submit New Comment">
+        </form>
       </div>
+
+
+
+
     </div>
+
     <br>
     <%@counters.each do |counter| %>
     <div class="item">

@@ -8,4 +8,10 @@
         <span class='timestamp'><%= @burn.created_at %></span>
       </p>
     </article>
+
+    <form id="comments" method="get" action="/burns/:id">
+      <input type="submit" value="Submit New Comment">
+    </form>
+
+
 </div>

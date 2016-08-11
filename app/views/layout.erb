@@ -46,12 +46,14 @@
       <h1><i class="database icon"></i>Smack Overflow </h1>
     </span>
   </div>
+  <% if current_user %>
   <div id="burns">
     <i class="fire icon"></i>
     <form method="get" action="/burns-new">
       <input type="submit" class="ui teal submit button" value="Submit New Burn">
     </form>
   </div>
+  <% end %>
   <%= yield %>
 </body>
 </html>

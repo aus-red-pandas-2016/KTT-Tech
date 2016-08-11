@@ -1,16 +1,21 @@
+require 'pry'
 get '/counters/:burn_id/new' do
   @burn_id = params[:burn_id]
-  #use ajax to display this partial form
-  #partial is _new.erb
+  if request.xhr?
+    erb :_new_counter, layout: false
+  else
+    redirect "/burns/#{@burn_id}"
+  end
 end
 
 post '/counters/:burn_id/new' do
     @burn_id = params[:burn_id]
     @counter = Counter.new(description: params[:description])
     @burn = Burn.find(@burn_id)
-    @burn << @counter
+    @burn.counters << @counter
     if @counter.save
-      redirect "/burns/#{@burn_id}"
+      # redirect "/burns/#{@burn_id}"
+      erb :_add_counter, layout: false
     else
       erb :'counters/new'
     end

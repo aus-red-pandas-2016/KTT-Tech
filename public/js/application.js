@@ -32,3 +32,32 @@
 //     });
 //   });
 // });
+
+$(document).ready(function() {
+  $("#counters").submit(function(e) {
+    e.preventDefault();
+
+        var form_url = $("#counters").attr("action");
+        $.ajax({
+          url: form_url,
+          method: "GET"
+        })
+        .done(function(response) {
+          $(".counter-list").append(response);
+        }); // for .done
+  }); //#counters
+
+  $("#new-counter-form").submit(function(e) {
+    e.preventDefault();
+
+    var form_url = $("#new-counter-form").attr("action");
+    var counter_description = $("input[name=description]").txt;
+    $.ajax({
+      url: form_url,
+      method: "POST",
+      data: {description: counter_description}
+    }) //ajax
+
+  }); //new-counter-form
+
+}); //document

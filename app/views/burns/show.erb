@@ -40,8 +40,9 @@
         </div>
         <!-- end burn comment section -->
         <form id="comments_button" method="get" action="/comments-new">
-          <input type="submit" value="Submit New Comment">
+          <input id="new-burn-comment" type="submit" class="ui blue submit button" value="Submit New Comment">
         </form>
+         <%= erb(:_new_comment) %>
       </div>
 
 

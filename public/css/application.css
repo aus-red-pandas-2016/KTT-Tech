@@ -136,6 +136,11 @@ body {
 
 #counter-submission {
   font-size: 0.85em;
-  color: white;
 }
+
+#new-burn-comment {
+  font-size: .85em;
+  margin-left: 5%;
+}
+
 

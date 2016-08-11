@@ -8,7 +8,7 @@ get '/burns-new' do
 end
 
 post '/burns' do
-    @burn = Burn.create(title: params[:title])
+    @burn = Burn.new(title: params[:title], burn_description: params[:burn_description], user_id: current_user.id)
     if @burn.save
       redirect "/burns/#{@burn.id}"
     else

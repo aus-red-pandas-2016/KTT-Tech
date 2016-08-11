@@ -1,8 +1,8 @@
-<form id="new_burns" method="post" actions="/burns-new">
+<form id="new_burns" method="post" action="/burns">
   <label for="burn_title_input">Title of Burn:</label>
-  <input id="burn_title_input" type="text" name="burn[:title]" placeholder="title" value="<%= @burn.try(:title) %>">
+  <input id="burn_title_input" type="text" name="title" placeholder="title">
   <label for="burn_description">Burn:</label>
-  <textarea id="burn_description" name="burn[:burn_description]"></textarea>
+  <textarea id="burn_description" name="burn_description"></textarea>
   <% if current_user %>
     <input type="submit" value="Submit New Burn" class="button">
   <% else %>

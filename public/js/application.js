@@ -47,17 +47,19 @@ $(document).ready(function() {
         }); // for .done
   }); //#counters
 
-  $("#new-counter-form").submit(function(e) {
+  $("body").on("submit", "#new-counter-form", function(e) {
+  // have to use .on for elements that aren't on the page
     e.preventDefault();
-
-    var form_url = $("#new-counter-form").attr("action");
-    var counter_description = $("input[name=description]").txt;
+    var form_url = $(this).attr("action");
+    var counter_description = $(this).find("input[name=description]").val();
     $.ajax({
       url: form_url,
       method: "POST",
       data: {description: counter_description}
     }) //ajax
-
+    .done(function(response) {
+      $(".counter-list").find(".description").last().append(response);
+    }); //for done
   }); //new-counter-form
 
 }); //document

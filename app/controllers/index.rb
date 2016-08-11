@@ -1,8 +1,10 @@
 get '/' do
+  session[:page] = "home"
   redirect '/burns'
 end
 
 get '/sign-up' do
+  session[:page] = "sign-up"
   erb :sign_up_form
 end
 
@@ -17,6 +19,7 @@ post '/sign-up' do
 end
 
 get '/login' do
+  session[:page] = "login"
   erb :login_form
 end
 

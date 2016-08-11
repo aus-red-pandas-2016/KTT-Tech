@@ -28,3 +28,30 @@ article a.vote-button {
 .voted_up {
   color: red;
 }
+
+html {
+  display: table;
+  margin: auto;
+}
+body {
+  display: table-cell;
+  height: 100%;
+  width: 600px;
+}
+
+.logo-container {
+
+  height: 200px;
+  display: table;
+  margin: auto;
+}
+
+#logo {
+  display: table-cell;
+  margin: auto;
+  vertical-align: middle;
+ }
+
+ #logo h1 {
+  font-size: 4em;
+ }

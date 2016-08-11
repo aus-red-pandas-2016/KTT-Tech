@@ -1,8 +1,27 @@
-<h1>Login</h1>
-<form action="/login" method="post">
-  <labe>Username:</labe> <br />
-  <input type="text" name="username" required/><br />
-  <labe>Password:</labe> <br />
-  <input type="password" name="password" required/><br />
-  <input type="submit" value="Login"/>
-</form>
+
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui image header">
+      <div class="content">
+        Log-in to your account
+      </div>
+    </h2>
+    <form action="/login" method="post" class="ui large form">
+      <div class="ui stacked secondary segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="username" placeholder="Username">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="Password">
+          </div>
+        </div>
+          <input class="ui fluid large teal submit button" type="submit" value="Login"/>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<h1>Sign-Up</h1>
+<!-- <h1>Sign-Up</h1>
 
 <form action="/sign-up" method="post">
   <labe>Username:</labe> <br />
@@ -6,4 +6,31 @@
   <labe>Password:</labe> <br />
   <input type="password" name="user[password]" required/><br />
   <input type="submit" value="Sign-up"/>
-</form>
+</form> -->
+
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui image header">
+      <div class="content">
+        Create a new account
+      </div>
+    </h2>
+    <form action="/sign-up" method="post" class="ui large form">
+      <div class="ui stacked secondary segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="user[username]" required placeholder="Username">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="user[password]" required placeholder="Password">
+          </div>
+        </div>
+          <input class="ui fluid large teal submit button" type="submit" value="Register"/>
+      </div>
+    </form>
+  </div>
+</div>

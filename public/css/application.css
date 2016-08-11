@@ -86,7 +86,56 @@ body {
   font-size: 1.5em;
  }
 
+ .burn_description {
+  font-size: 1.5em;
+ }
 
+ .user {
+  margin-left: 10px;
+ }
 
+ #burn-content {
+    padding-left: 10px;
 
+ }
+
+#burn-votes {
+  margin-top: 15%;
+  border-right: 1px solid gray;
+}
+
+.item {
+  margin-left: 15px;
+}
+
+#counter-votes {
+  font-size: 0.85em;
+  border-right: 1px solid gray;
+  margin-left: 10%;
+}
+
+.counter {
+  background-color: #e6e6e6;
+}
+
+#counter-content {
+  background-color: #f2f2f2;
+  padding-left: 10px;
+  float: left;
+  width: 80%;
+}
+
+.counter-description {
+  font-size: 1.25em;
+}
+
+.inline{
+  display: inline-block;
+  float: right;
+}
+
+#counter-submission {
+  font-size: 0.85em;
+  color: white;
+}
 

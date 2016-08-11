@@ -1,11 +1,42 @@
-<div class='burn-select'>
-    <article id="<%= @burn.id%>">
-      <h2><a href='/burns/<%= @burn.id %>'><%= @burn.title %></a></h2>
-      <p>
-        <span class='user'><%= @burn.user.username %></span>
-        <span class='votes'><%= @burn.votes %></span>
-        <span class='burn_description'><%= @burn.burn_description %></span>
-        <span class='timestamp'><%= @burn.created_at %></span>
-      </p>
-    </article>
+<div class="ui segment">
+  <div class="ui items">
+    <div class="item">
+      <div id="burn-votes" class="content">
+        <%= @burn.points %> Points
+      </div>
+      <div id="burn-content" class="content">
+        <a class="header"><h2><a href='/burns/<%= @burn.id %>'><%= @burn.title.split.map(&:capitalize).join(' ') %></a></h2></a>
+        <div class="description">
+          <p><main class='burn_description'><i>"<%= @burn.burn_description %>"</i></main></p>
+        </div>
+        <div class="extra">
+          <%= @burn.user.username %>   |   <%= long_form_date(@burn.created_at) %>
+        </div>
+      </div>
+    </div>
+    <br>
+    <%@counters.each do |counter| %>
+    <div class="item">
+      <div id="counter-votes" class="content">
+        <%= counter.points %> Points
+      </div>
+      <div id="counter-content" class="content">
+        <div class="description">
+          <p><main class='counter-description'><i>"<%= counter.description %>"</i></main></p>
+        </div>
+        <div class="extra">
+          <%= counter.user.username %>   |   <%= long_form_date(counter.created_at) %>
+        </div>
+      </div>
+    </div>
+
+    <form class="inline" method="post" action='/counter/<%= counter.id %>' >
+            <input type="hidden" name="_method" value="DELETE">
+            <input id="counter-submission" type="submit" class="ui teal submit button" value="Delete"/>
+          </form>
+    <form class="inline" id="counters" method="get" action="/counters/<%=@burn.id %>/new">
+      <input id="counter-submission" type="submit" class="ui teal submit button"value="Submit New Counter">
+    </form>
+  </div>
 </div>
+ <% end %>

@@ -26,4 +26,3 @@ delete '/burns/:id' do
   @burn = Burn.find(params[:id])
   @burn.destroy
 end
-

@@ -13,16 +13,15 @@
       <% @burn.comments = @comments %>
       <% @comments.each do |comment| %>
         <form method="post" action='/burns/<%= @burn.id %>'></form>
-        <p>
-          <span class='burn_comment_description'><%= comment.description %></span>
-          <span class='timestamp'><%= comment.created_at %></span>
-        </p>
+        <%= erb(:'/comments/_comment', locals: {comment: comment}) %>
       <% end %>
-  </div>
+    </div>
 
-    <form id="comments" method="get" action="/comments-new">
+    <form id="comments_button" method="get" action="/comments-new">
       <input type="submit" value="Submit New Comment">
     </form>
+
+    <%= erb(:_new_comment) %>
 
 
 </div>

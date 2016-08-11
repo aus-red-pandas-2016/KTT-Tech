@@ -1,23 +1,24 @@
 get '/burns' do
-  @burns = Burn.all
+  @burns = Burn.order(:created_at)
   erb :burn
 end
 
+get '/burns-new' do
+  erb :'burns/new'
+end
+
 post '/burns' do
-  @burn = Burn.create(title: params[:title])
-  if request.xhr? && burn.save
-    status 200
-    erb(:_new_burn, layout: false)
-  elsif request.xhr?
-    status 422
-  else
-    redirect '/burns'
-  end
+    @burn = Burn.create(title: params[:title])
+    if @burn.save
+      redirect "/burns/#{@burn.id}"
+    else
+      erb :'burns/new'
+    end
 end
 
 get '/burns/:id' do
   @burn = Burn.find(params[:id])
-  erb :'burns-id'
+  erb :'burns/show'
 end
 
 delete '/burns/:id' do
@@ -25,6 +26,3 @@ delete '/burns/:id' do
   @burn.destroy
 end
 
-post '/burns/new' do
-  erb :'burns-new'
-end

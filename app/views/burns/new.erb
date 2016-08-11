@@ -1,0 +1,12 @@
+<form id="new_burns" method="post" actions="/burns-new">
+  <label for="burn_title_input">Title of Burn:</label>
+  <input id="burn_title_input" type="text" name="burn[:title]" placeholder="title" value="<%= @burn.try(:title) %>">
+  <label for="burn_description">Burn:</label>
+  <textarea id="burn_description" name="burn[:burn_description]"></textarea>
+  <% if current_user %>
+    <input type="submit" value="Submit New Burn" class="button">
+  <% else %>
+    <p>You must be logged in to create a new burn.</p>
+  <% end %>
+</form>
+

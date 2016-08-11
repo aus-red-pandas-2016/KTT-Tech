@@ -1,6 +1,6 @@
 get '/burns' do
   @burns = Burn.order(:created_at)
-  erb :burn
+  erb :'burns/burn'
 end
 
 get '/burns-new' do
@@ -18,6 +18,7 @@ end
 
 get '/burns/:id' do
   @burn = Burn.find(params[:id])
+  @comments = @burn.comments.order(:created_at).reverse
   erb :'burns/show'
 end
 

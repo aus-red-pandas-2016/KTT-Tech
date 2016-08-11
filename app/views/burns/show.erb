@@ -9,7 +9,18 @@
       </p>
     </article>
 
-    <form id="comments" method="get" action="/burns/:id">
+    <div class='burn-comment-list'>
+      <% @burn.comments = @comments %>
+      <% @comments.each do |comment| %>
+        <form method="post" action='/burns/<%= @burn.id %>'></form>
+        <p>
+          <span class='burn_comment_description'><%= comment.description %></span>
+          <span class='timestamp'><%= comment.created_at %></span>
+        </p>
+      <% end %>
+  </div>
+
+    <form id="comments" method="get" action="/comments-new">
       <input type="submit" value="Submit New Comment">
     </form>
 

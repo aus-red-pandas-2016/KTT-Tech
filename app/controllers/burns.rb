@@ -18,6 +18,7 @@ end
 
 get '/burns/:id' do
   @burn = Burn.find(params[:id])
+  @counters = @burn.counters.order(:created_at)
   erb :'burns/show'
 end
 
@@ -25,4 +26,3 @@ delete '/burns/:id' do
   @burn = Burn.find(params[:id])
   @burn.destroy
 end
-

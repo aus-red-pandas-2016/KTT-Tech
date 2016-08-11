@@ -9,3 +9,19 @@
       </p>
     </article>
 </div>
+
+<div class='counter-list'>
+  <%@counters.each do |counter| %>
+      <p class='description'>
+        <%= counter.description %>
+      </p>
+      <form method="post" action='/counter/<%= counter.id %>'>
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete"/>
+      </form>
+    <% end %>
+</div>
+
+<form id="counters" method="get" action="/counters/<%=@burn.id %>/new">
+  <input type="submit" value="Submit New Counter">
+</form>

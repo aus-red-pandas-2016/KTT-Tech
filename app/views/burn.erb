@@ -1,20 +1,18 @@
-
 <div class="ui segment burn-list">
-    <%@burns.each do |burn| %>
-      <article id="<%= burn.id %>">
-        <form method="post" action='/burns/<%= burn.id %>'></form>
-        <h2><a href='/burns/<%= burn.id %>'><%= burn.title %></a></h2>
-        <p>
-          <span class='votes'><%= burn.points %> points</span>
-          <span class='user'><%= burn.user.username %></span>
-          <span class='timestamp'><%= burn.created_at %></span>
-        </p>
+  <%@burns.each do |burn| %>
+    <div class="ui items">
+      <div class="item">
+        <article id="<%= burn.id %>" class="content">
+          <a id="burn-titles" href='/burns/<%= burn.id %>' class="header"><%= burn.title.split.map(&:capitalize).join(' ') %></a>
+        <div class="description">
+          <p><%= burn.points %> points</p>
+        </div>
+        <div class="extra">
+          <%= burn.user.username %>  |  <%= long_form_date(burn.created_at ) %>
+        </div>
       </article>
-      <% end %>
+    </div>
+  <% end %>
 </div>
-
-
-
-
 
 

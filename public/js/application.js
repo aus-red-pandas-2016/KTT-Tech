@@ -1,17 +1,17 @@
-$(document).ready(function() {
-  $("#burns").on("submit", function(Event){
-    var info = $(this).serialize();
-      $.ajax({
-        url: '/burns',
-        method: 'POST',
-        data: info,
-        dataType: 'json'
-      })
-      .done(function(result){
-        $(".burn-list").append(result);
-        $("burns").find("input[type=text]").val("");
-      })
-  })
+// $(document).ready(function() {
+//   $("#new_burn_button").on("submit", function(Event){
+//     var info = $(this).serialize();
+//       $.ajax({
+//         url: '/burns',
+//         method: 'POST',
+//         data: info,
+//         dataType: 'json'
+//       })
+//       .done(function(result){
+//         $(".burn-list").append(result);
+//         $("burns").find("input[type=text]").val("");
+//       })
+//   })
 
   $('.burn-list').on('submit', 'form', function(event){
     event.preventDefault();
@@ -28,12 +28,12 @@ $(document).ready(function() {
     });
   });
 
-  $('.post-container').on('click', 'a.delete',function(event){
+  $('.burn-list').on('click', 'a.delete',function(event){
     event.preventDefault();
-    var post = $(this).closest('article');
-    var post_id = post.attr('id');
+    var burn = $(this).closest('article');
+    var burn_id = burn.attr('id');
     $.ajax({
-        url: '/posts/'+ post_id,
+        url: '/burns/'+ burn_id,
         method: "delete",
       })
     .done(function(){

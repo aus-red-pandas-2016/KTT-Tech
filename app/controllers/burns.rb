@@ -24,3 +24,7 @@ delete '/burns/:id' do
   @burn = Burn.find(params[:id])
   @burn.destroy
 end
+
+post '/burns/new' do
+  erb :'burns-new'
+end

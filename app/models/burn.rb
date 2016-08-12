@@ -9,7 +9,7 @@ class Burn < ActiveRecord::Base
 
   def points
     if self.votes != []
-      self.votes.map {|vote| vote.value }.flatten.inject(:+)
+      self.votes.map {|vote| vote.value }.inject(:+)
     else
       return 0
     end

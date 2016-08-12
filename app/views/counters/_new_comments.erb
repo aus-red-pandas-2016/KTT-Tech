@@ -3,7 +3,10 @@
   <textarea required id="comment_description" name="description"></textarea>
   <input type="hidden" name="counter_id" value="<%= counter_id %>">
 
+  <% if current_user %>
   <span class='counter_username'><% current_user.username %></span>
+  <% end %>
+
   <% if current_user %>
     <input type="submit" value="Submit New Comment" class="button">
   <% else %>

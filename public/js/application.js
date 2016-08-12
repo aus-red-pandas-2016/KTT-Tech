@@ -20,14 +20,13 @@ $(document).ready(function() {
         })
         .done(function(result){
 
-          $("ul").append("<li>"+result+"</li>");
+          $("#burn-comments").append("<li>"+result+"</li>");
           commentForm.trigger("reset")
           $(commentForm).hide();
           $("#comments_button").show();
         });
     }
   });
-
   var CounterCommentForm = $('#counter_comments_form')
    $("#counter-comment").click(function(event){
     event.preventDefault();
@@ -57,21 +56,66 @@ $(document).ready(function() {
     }
   });
 
-  $('#fire-upvote-button').click(function(event){
-    event.preventDefault();
-    var burn_id = $(this).closest('article').attr('id');
+
+  // for new counters
+
+  $("#counters").submit(function(e) {
+    e.preventDefault();
+
+        var form_url = $("#counters").attr("action");
+        $.ajax({
+          url: form_url,
+          method: "GET"
+        })
+        .done(function(response) {
+          $("#new-counter-container").append(response);
+        });
+  });
+
+  $("body").on("submit", "#new-counter-form", function(e) {
+    e.preventDefault();
+
+    var form_url = $("#new-counter-form").attr("action");
+    var counter_description = $("input[name=description]").val();
     $.ajax({
-      url:'/burns/' + burn_id + '/vote',
+      url: form_url,
+      method: "POST",
+      data: {description: counter_description}
+    }).done( function(response) {
+      $('#burn-container').append(response);
+      $("#new-counter-form").trigger("reset");
+      $("#new-counter-form").hide();
+    })
+  });
+
+  $("#form-burn-voteup").submit(function(event){
+    event.preventDefault();
+    var burn_id = $(this).closest("div").attr("id")
+    $.ajax({
+      url:'/burns/' + burn_id + '/voteup',
       method: 'POST',
-      dataType: 'json'
-      })
+      dataType:'json'
+    })
     .done(function(result){
       var upvote = result
-      $("#" + burn_id +" .points").html(upvote.votes);
-      $("#" + burn_id +" button").addClass('voted_up');
-      // debugger
+      $("#" + burn_id +" p ").html(upvote.points + " Points");
+      $("#" + burn_id +" .plus").addClass('voted-up');
     });
   });
 
+  $("#form-burn-votedown").submit(function(event){
+    event.preventDefault();
+    var burn_id = $(this).closest("div").attr("id")
+    $.ajax({
+      url:'/burns/' + burn_id + '/votedown',
+      method: 'POST',
+      dataType:'json'
+    })
+    .done(function(result){
+      var downvote = result
+      $("#" + burn_id +" p ").html(downvote.points + " Points");
+      $("#" + burn_id +" .minus").addClass('voted-down');
+    });
+  });
 });
 

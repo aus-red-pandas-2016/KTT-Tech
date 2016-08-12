@@ -1,5 +1,5 @@
 get '/burns' do
-  @burns = Burn.order(:created_at)
+  @burns = Burn.all.map{ |burn| burn }.sort_by!{ |burn| burn.points }.reverse
   erb :'burns/burn'
 end
 
@@ -17,6 +17,7 @@ post '/burns' do
 end
 
 get '/burns/:id' do
+  session[:page] = 'burn'
   @burn = Burn.find(params[:id])
   @burn_comments = @burn.comments.order(:created_at)
   @counters = @burn.counters.order(:created_at)

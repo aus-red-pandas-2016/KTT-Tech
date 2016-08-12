@@ -13,9 +13,7 @@ article a.vote-button {
   display: inline;
   vertical-align: sub;
 }
-.inline {
-  display: inline;
-}
+
 .upvote-button {
   background-color: transparent;
   border: none;
@@ -95,11 +93,11 @@ body {
  }
 
  #burn-content {
-    padding-left: 10px;
+  padding-left: 10px;
 
  }
 
-#burn-votes {
+.burn-votes {
   margin-top: 15%;
   border-right: 1px solid gray;
 }
@@ -134,16 +132,40 @@ body {
   float: right;
 }
 
-#counter-submission {
-  font-size: 0.85em;
-}
 
 .comment-button {
   font-size: .85em;
   margin-left: 5%;
 }
 
-#counter-comment {
-  margin-left: 18.5%;
+#counters {
+  float: right;
 }
+
+.ui, .segment {
+  clear: both;
+}
+
+#counter-submission {
+  font-size: 0.85em;
+}
+
+#new-burn-comment {
+  font-size: 0.85em;
+}
+
+#burn-votes * {
+  display: block;
+  text-align: center;
+}
+
+#burn-votes p {
+  margin-left: -20%;
+  margin-top: 10%;
+}
+
+#burn-votes {
+  padding-top: 5%;
+}
+
 

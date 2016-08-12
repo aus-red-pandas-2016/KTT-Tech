@@ -1,11 +1,12 @@
-<form id="new_comments_form" hidden method="post" action="/comments">
+<form id="counter_comments_form" method="post" hidden action="/counters/comments">
   <label for="comment_description">Comment:</label>
   <textarea required id="comment_description" name="description"></textarea>
+  <input type="hidden" name="counter_id" value="<%= counter_id %>">
+
+  <span class='counter_username'><% current_user.username %></span>
   <% if current_user %>
     <input type="submit" value="Submit New Comment" class="button">
   <% else %>
     <p>You must be logged in to create a new comment.</p>
   <% end %>
 </form>
-
-

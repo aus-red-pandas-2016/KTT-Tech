@@ -1,16 +1,3 @@
-<!--     <div class='burn-comment-list'>
-      <% @burn_comments.each do |comment| %>
-        <form method="post" action='/burns/<%= @burn.id %>'></form>
-        <%= erb(:'/comments/_comment', locals: {comment: comment}) %>
-      <% end %>
-    </div>
-
-    <form id="comments_button" method="get" action="/comments-new">
-      <input type="submit" value="Submit New Comment">
-    </form>
-
-    <%= erb(:_new_comment) %> -->
-
 
 <div class="ui segment">
   <div class="ui items">
@@ -29,28 +16,24 @@
         <!-- begin burn comments section -->
         <div class="content">
           <ul class"ui list">
-            <li>
             <% @burn_comments.each do |comment| %>
-              <form method="post" action='/burns/<%= @burn.id %>'></form>
-              <%= erb(:'/comments/_comment', locals: {comment: comment}) %>
-
+              <li>
+                <form method="post" action='/burns/<%= @burn.id %>'></form>
+                <%= erb(:'/comments/_comment', locals: {comment: comment}) %>
+              </li>
             <% end %>
-            </li>
           </ul>
         </div>
         <!-- end burn comment section -->
         <form id="comments_button" method="get" action="/comments-new">
-          <input id="new-burn-comment" type="submit" class="ui blue submit button" value="Submit New Comment">
+          <input type="submit" class="ui blue submit button comment-button" value="Submit New Burn Comment">
         </form>
-         <%= erb(:_new_comment) %>
+         <%= erb(:"burns/_new_comment", locals: {burn_id: @burn.id  }) %>
       </div>
-
-
-
-
     </div>
-
     <br>
+
+    <!-- begin counter section -->
     <%@counters.each do |counter| %>
     <div class="item">
       <div id="counter-votes" class="content">
@@ -63,17 +46,33 @@
         <div class="extra">
           <%= counter.user.username %>   |   <%= long_form_date(counter.created_at) %>
         </div>
+        <div class="content">
+          <ul id="counter-comment-list" class"ui list">
+            <% counter.comments.each do |comment| %>
+              <li>
+                <form method="post" action='/burns/<%= @burn.id %>'></form>
+                <%= erb(:'/comments/_comment', locals: {comment: comment}) %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
 
+    <!-- beginning of buttons -->
+    <form id="counter-comment" class="comment_button" method="get" action="/comments-new">
+      <input id="new-burn-comment" type="submit" class="ui blue submit button" value="Submit New Counter Comment">
+    </form>
+    <%= erb(:"counters/_new_comments", locals: {counter_id: counter.id  }) %>
+
+
     <form class="inline" method="post" action='/counter/<%= counter.id %>' >
-            <input type="hidden" name="_method" value="DELETE">
-            <input id="counter-submission" type="submit" class="ui teal submit button" value="Delete"/>
-          </form>
+      <input type="hidden" name="_method" value="DELETE">
+      <input id="counter-submission" type="submit" class="ui teal submit button" value="Delete"/>
+    </form>
     <form class="inline" id="counters" method="get" action="/counters/<%=@burn.id %>/new">
       <input id="counter-submission" type="submit" class="ui teal submit button"value="Submit New Counter">
     </form>
   </div>
-
 </div>
  <% end %>

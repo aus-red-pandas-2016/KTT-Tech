@@ -18,7 +18,7 @@ end
 
 get '/burns/:id' do
   @burn = Burn.find(params[:id])
-  @burn_comments = @burn.comments.order(:created_at).reverse
+  @burn_comments = @burn.comments.order(:created_at)
   @counters = @burn.counters.order(:created_at)
   erb :'burns/show'
 end

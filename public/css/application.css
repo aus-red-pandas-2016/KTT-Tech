@@ -36,7 +36,7 @@ html {
 body {
   display: table-cell;
   height: 100%;
-  width: 600px;
+  width: 700px;
 }
 
 .logo-container {
@@ -138,9 +138,12 @@ body {
   font-size: 0.85em;
 }
 
-#new-burn-comment {
+.comment-button {
   font-size: .85em;
   margin-left: 5%;
 }
 
+#counter-comment {
+  margin-left: 18.5%;
+}
 

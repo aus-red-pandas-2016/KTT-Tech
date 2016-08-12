@@ -26,3 +26,17 @@ delete '/counter/:id' do
     end
   redirect "/burns/#{@counter.burn_id}"
 end
+
+post '/counters/comments' do
+  @counter = Counter.find(params[:counter_id])
+  @comment = @counter.comments.create(description: params[:description], user_id: current_user.id )
+
+  if request.xhr? && @comment.save
+    status 200
+    erb(:"/counters/_comment", layout: false, locals: {comment: @comment} )
+  elsif request.xhr?
+    status 422
+  else
+    erb :'comments/new'
+  end
+end

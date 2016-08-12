@@ -1,11 +1,20 @@
-post '/burns/:id/vote' do
-  Burn = Burn.find(params[:id])
-  burn.votes.create(value: 1)
-  @votes = burn.votes.count
-  p @votes
+post '/burns/:id/voteup' do
+  @burn = Burn.find(params[:id])
+  @burn.votes.create(value: 1)
   if request.xhr?
-    {votes: burn.votes.count}.to_json
+    {votes: @burn.ponits}.to_json
   else
-    redirect "/burns"
+    redirect "/burns/#{@burn.id}"
   end
 end
+
+post '/burns/:id/votedown' do
+  @burn = Burn.find(params[:id])
+  @burn.votes.create(value: -1)
+  if request.xhr?
+    {votes: @burn.ponits}.to_json
+  else
+    redirect "/burns/#{@burn.id}"
+  end
+end
+

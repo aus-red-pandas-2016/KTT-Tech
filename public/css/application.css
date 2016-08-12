@@ -154,6 +154,18 @@ body {
   font-size: 0.85em;
 }
 
+#burn-votes * {
+  display: block;
+  text-align: center;
+}
 
+#burn-votes p {
+  margin-left: -20%;
+  margin-top: 10%;
+}
+
+#burn-votes {
+  padding-top: 5%;
+}
 
 

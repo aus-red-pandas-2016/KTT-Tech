@@ -7,10 +7,20 @@
   <% end %>
 <div class="ui segment">
   <div id="burn-container" class="ui items">
+  <!-- voting section -->
+
     <div class="item">
       <div id="burn-votes" class="content">
-        <%= @burn.points %> Points
+        <form method="post" action="/burns/<%= @burn.id %>/voteup">
+          <button type="submit"><i class="plus icon"></i></button>
+        </form>
+        <p><%= @burn.points %> Points</p>
+        <form method="post" action="/burns/<%= @burn.id %>/votedown">
+          <button type="submit"><i class="minus icon"></i></button>
+        </form>
       </div>
+
+  <!-- end voting section -->
       <div id="burn-content" class="content">
         <a class="header"><h2><a href='/burns/<%= @burn.id %>'><%= @burn.title.split.map(&:capitalize).join(' ') %></a></h2></a>
         <div class="description">

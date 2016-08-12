@@ -1,5 +1,5 @@
 get '/burns' do
-  @burns = Burn.order(:created_at)
+  @burns = Burn.all.map{ |burn| burn }.sort_by!{ |burn| burn.points }.reverse
   erb :'burns/burn'
 end
 

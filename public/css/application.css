@@ -102,6 +102,11 @@ body {
   border-right: 1px solid gray;
 }
 
+.counter-votes {
+  margin-top: 15%;
+  border-right: 1px solid gray;
+}
+
 .item {
   margin-left: 15px;
 }

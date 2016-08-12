@@ -103,18 +103,32 @@ $(document).ready(function() {
     });
   });
 
-  $("#form-burn-votedown").submit(function(event){
+  $("#form-counter-votedown").submit(function(event){
     event.preventDefault();
-    var burn_id = $(this).closest("div").attr("id")
+    var counter_id = $(this).closest("div").attr("id")
     $.ajax({
-      url:'/burns/' + burn_id + '/votedown',
+      url:'/counters/' + counter_id + '/votedown',
       method: 'POST',
       dataType:'json'
     })
     .done(function(result){
       var downvote = result
-      $("#" + burn_id +" p ").html(downvote.points + " Points");
-      $("#" + burn_id +" .minus").addClass('voted-down');
+      $("#" + counter_id +" p ").html(downvote.points + " Points");
+      $("#" + counter_id +" .minus").addClass('voted-down');
+    });
+  });
+  $("#form-counter-votedown").submit(function(event){
+    event.preventDefault();
+    var counter_id = $(this).closest("div").attr("id")
+    $.ajax({
+      url:'/counters/' + counter_id + '/votedown',
+      method: 'POST',
+      dataType:'json'
+    })
+    .done(function(result){
+      var downvote = result
+      $("#" + counter_id +" p ").html(downvote.points + " Points");
+      $("#" + counter_id +" .minus").addClass('voted-down');
     });
   });
 });

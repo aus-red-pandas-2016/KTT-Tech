@@ -55,10 +55,8 @@
     <!-- begin counter section -->
     <%@counters.each do |counter| %>
     <div class="item">
-      <div id="counter-votes" class="content">
-        <%= counter.points %> Points
-        <div class="item">
-      <div id="<%= counter.id %>" class="content counter-votes">
+    <div
+      <div id="c<%= counter.id %>" class="content counter-votes">
         <form id="form-counter-voteup" method="post" action="/counters/<%= counter.id %>/voteup">
           <button type="submit"><i class="plus icon"></i></button>
         </form>

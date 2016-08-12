@@ -19,6 +19,7 @@ post '/burns/:id/votedown' do
 end
 
 post '/counters/:id/voteup' do
+  params[:id].slice!(0)
   @counter = Counter.find(params[:id])
   @counter.votes.create(value: 1)
   if request.xhr?
@@ -29,6 +30,7 @@ post '/counters/:id/voteup' do
 end
 
 post '/counters/:id/votedown' do
+  params[:id].slice!(0)
   @counter = Counter.find(params[:id])
   @counter.votes.create(value: -1)
   if request.xhr?

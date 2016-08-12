@@ -17,6 +17,7 @@ post '/burns' do
 end
 
 get '/burns/:id' do
+  session[:page] = 'burn'
   @burn = Burn.find(params[:id])
   @burn_comments = @burn.comments.order(:created_at)
   @counters = @burn.counters.order(:created_at)

@@ -46,7 +46,8 @@
       <h1><i class="database icon"></i>Smack Overflow </h1>
     </span>
   </div>
-  <% if current_user %>
+
+  <% if current_user && (session[:page] == 'home') %>
   <div id="burns">
     <i class="fire icon"></i>
     <form method="get" action="/burns-new">

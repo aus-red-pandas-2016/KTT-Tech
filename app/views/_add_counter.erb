@@ -1,0 +1,43 @@
+<!-- <p class="description">
+  <%= @counter.description %>
+</p>
+
+<form method="post" action"/counter/<%@counter.id%>">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form>
+ -->
+ <div class="item">
+      <div id="counter-votes" class="content">
+        <%= @counter.points %> Points
+      </div>
+      <div id="counter-content" class="content">
+        <div class="description">
+          <p><main class='counter-description'><i>"<%= @counter.description %>"</i></main></p>
+        </div>
+        <div class="extra">
+          <%= @counter.user.username %>   |   <%= long_form_date(@counter.created_at) %>
+        </div>
+        <div class="content">
+          <ul id="counter-comment-list" class"ui list">
+            <% @counter.comments.each do |comment| %>
+              <li>
+                <form method="post" action='/burns/<%= @burn.id %>'></form>
+                <%= erb(:'/comments/_comment', locals: {comment: comment}) %>
+              </li>
+          </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- beginning of buttons -->
+    <form method="post" class="inline" action='/counter/<%= @counter.id %>' >
+      <input type="hidden" name="_method" value="DELETE">
+      <input id="counter-submission" type="submit" class="ui teal submit button" value="Delete"/>
+    </form>
+
+    <form id="counter-comment" class="comment_button inline" method="get" action="/comments-new">
+      <input id="new-burn-comment" type="submit" class="ui blue submit button" value="Submit New Counter Comment">
+    </form>
+    <%= erb(:"counters/_new_comments", locals: {counter_id: @counter.id  }) %>

@@ -20,14 +20,13 @@ $(document).ready(function() {
         })
         .done(function(result){
 
-          $("ul").append("<li>"+result+"</li>");
+          $("#burn-comments").append("<li>"+result+"</li>");
           commentForm.trigger("reset")
           $(commentForm).hide();
           $("#comments_button").show();
         });
     }
   });
-
   var CounterCommentForm = $('#counter_comments_form')
    $("#counter-comment").click(function(event){
     event.preventDefault();
@@ -57,4 +56,35 @@ $(document).ready(function() {
     }
   });
 
+  // for new counters
+
+  $("#counters").submit(function(e) {
+    e.preventDefault();
+
+        var form_url = $("#counters").attr("action");
+        $.ajax({
+          url: form_url,
+          method: "GET"
+        })
+        .done(function(response) {
+          $("#new-counter-container").append(response);
+        });
+  });
+
+  $("body").on("submit", "#new-counter-form", function(e) {
+    e.preventDefault();
+
+    var form_url = $("#new-counter-form").attr("action");
+    var counter_description = $("input[name=description]").val();
+    $.ajax({
+      url: form_url,
+      method: "POST",
+      data: {description: counter_description}
+    }).done( function(response) {
+      $('#burn-container').append(response);
+      $("#new-counter-form").trigger("reset");
+      $("#new-counter-form").hide();
+    })
+
+  });
 });

@@ -1,3 +1,7 @@
 <p class='description'>
   <%= @counter.description %>
 </p>
+<form method="post" action='/counter/<%= @counter.id %>'>
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete"/>
+</form>

@@ -20,8 +20,11 @@ end
 
 delete '/counter/:id' do
   @counter = Counter.find(params[:id])
-    if current_user.id ==  @counter.user_id
-      @counter.destroy
+  @counter.destroy
+    if request.xhr?
+      # if current_user.id ==  @counter.user_id
+        {id: "/counter/#{@counter.id}"}.to_json 
+      # end
     else
       #raise error messages to let them know they have to be
       #the counter creator to delete

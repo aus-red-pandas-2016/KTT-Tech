@@ -16,6 +16,7 @@ $(document).ready(function() {
   // have to use .on for elements that aren't on the page
     e.preventDefault();
     var form_url = $(this).attr("action");
+
     var counter_description = $(this).find("input[name=description]").val();
     $.ajax({
       url: form_url,
@@ -29,4 +30,25 @@ $(document).ready(function() {
     $(this).find("input[name=description]").val("");
   }); //new-counter-form
 
+  $(".counter-list").on("submit", "form", function(e) {
+    e.preventDefault();
+
+    var form_url = $(this).attr("action");
+    var id = $(this).attr("id");
+    var this_one = $(this);
+    $.ajax({
+      url: form_url,
+      method: "DELETE"
+    })
+    .done(function(response) {
+    var attr =  $("form").attr("action");
+debugger
+    // if (attr == response) {
+      // $("#" + id).parent().remove();
+      $(this_one); //grabs the form delete was pressed on 
+
+    // }
+      // $(form).attr("action").val(form_url).closest("div").remove();
+    })//done
+  }); //.counter-list
 }); //document

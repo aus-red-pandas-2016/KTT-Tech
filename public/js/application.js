@@ -57,4 +57,21 @@ $(document).ready(function() {
     }
   });
 
+  $('#fire-upvote-button').click(function(event){
+    event.preventDefault();
+    var burn_id = $(this).closest('article').attr('id');
+    $.ajax({
+      url:'/burns/' + burn_id + '/vote',
+      method: 'POST',
+      dataType: 'json'
+      })
+    .done(function(result){
+      var upvote = result
+      $("#" + burn_id +" .points").html(upvote.votes);
+      $("#" + burn_id +" button").addClass('voted_up');
+      // debugger
+    });
+  });
+
 });
+

@@ -4,9 +4,11 @@
     <div class="item">
       <div id="burn-votes" class="content">
         <%= @burn.points %> Points
+        <button class="ui icon button" id="fire-upvote-button">  <i class="fire icon"></i></button>
       </div>
       <div id="burn-content" class="content">
-        <a class="header"><h2><a href='/burns/<%= @burn.id %>'><%= @burn.title.split.map(&:capitalize).join(' ') %></a></h2></a>
+        <a class="header"><h2><a href='/burns/<%= @burn.id %>'>
+        <%= @burn.title.split.map(&:capitalize).join(' ') %></a></h2></a>
         <div class="description">
           <p><main class='burn_description'><i>"<%= @burn.burn_description %>"</i></main></p>
         </div>

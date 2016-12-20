@@ -20,6 +20,7 @@ require "sinatra/reloader" if development?
 
 require 'erb'
 require 'pry'
+require 'awesome_print'
 
 
 # Some helper constants for path-centric logic

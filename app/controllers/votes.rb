@@ -18,3 +18,25 @@ post '/burns/:id/votedown' do
   end
 end
 
+post '/counters/:id/voteup' do
+  params[:id].slice!(0)
+  @counter = Counter.find(params[:id])
+  @counter.votes.create(value: 1)
+  if request.xhr?
+    {points: @counter.points}.to_json
+  else
+    redirect "/counters/#{@counter.id}"
+  end
+end
+
+post '/counters/:id/votedown' do
+  params[:id].slice!(0)
+  @counter = Counter.find(params[:id])
+  @counter.votes.create(value: -1)
+  if request.xhr?
+    {points: @counter.points}.to_json
+  else
+    redirect "/counters/#{@counter.id}"
+  end
+end
+

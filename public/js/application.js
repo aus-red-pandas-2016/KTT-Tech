@@ -88,6 +88,7 @@ $(document).ready(function() {
     })
   });
 
+//Burn vote starts
   $("#form-burn-voteup").submit(function(event){
     event.preventDefault();
     var burn_id = $(this).closest("div").attr("id")
@@ -103,7 +104,7 @@ $(document).ready(function() {
     });
   });
 
-  $("#form-burn-votedown").submit(function(event){
+    $("#form-burn-votedown").submit(function(event){
     event.preventDefault();
     var burn_id = $(this).closest("div").attr("id")
     $.ajax({
@@ -114,7 +115,36 @@ $(document).ready(function() {
     .done(function(result){
       var downvote = result
       $("#" + burn_id +" p ").html(downvote.points + " Points");
-      $("#" + burn_id +" .minus").addClass('voted-down');
+      $("#" + burn_id +" .plus").addClass('voted-down');
+    });
+  });
+$("#form-counter-voteup").submit(function(event){
+    event.preventDefault();
+    var counter_id = $(this).closest("div").attr("id")
+    $.ajax({
+      url:'/counters/' + counter_id + '/voteup',
+      method: 'POST',
+      dataType:'json'
+    })
+    .done(function(result){
+      var counter_upvote = result
+      $("#" + counter_id +" p ").html(counter_upvote.points + " Points");
+      $("#" + counter_id +" .plus").addClass('voted-up');
+    });
+  });
+
+    $("#form-counter-votedown").submit(function(event){
+    event.preventDefault();
+    var counter_id = $(this).closest("div").attr("id")
+    $.ajax({
+      url:'/counters/' + counter_id + '/votedown',
+      method: 'POST',
+      dataType:'json'
+    })
+    .done(function(result){
+      var counter_downvote = result
+      $("#" + counter_id +" p ").html(counter_downvote.points + " Points");
+      $("#" + counter_id +" .plus").addClass('voted-down');
     });
   });
 });
